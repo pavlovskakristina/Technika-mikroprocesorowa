@@ -1,0 +1,397 @@
+ASxxxx Linker V03.00/V05.40 + sdld,  page 1.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000000  .__.ABS.                           _startup
+     00000000  l_CABS                          
+     00000000  l_CONST                         
+     00000000  l_DABS                          
+     00000000  l_DATA                          
+     00000000  l_INITIALIZED                   
+     00000000  l_INITIALIZER                   
+     00000000  l__CODE                         
+     00000000  s_CABS                          
+     00000000  s_DABS                          
+     00000000  s__CODE                         
+     00000001  l_SSEG                          
+     00000001  s_DATA                          
+     00000001  s_INITIALIZED                   
+     00000001  s_SSEG                          
+     00000003  l_GSFINAL                       
+     00000007  l_HOME                          
+     00000023  l_GSINIT                        
+     00000087  l_CODE                          
+     00005000  _PA_ODR                            main
+     00005001  _PA_IDR                            main
+     00005002  _PA_DDR                            main
+     00005003  _PA_CR1                            main
+     00005004  _PA_CR2                            main
+     00005005  _PB_ODR                            main
+     00005006  _PB_IDR                            main
+     00005007  _PB_DDR                            main
+     00005008  _PB_CR1                            main
+     00005009  _PB_CR2                            main
+     0000500A  _PC_ODR                            main
+     0000500B  _PC_IDR                            main
+     0000500C  _PC_DDR                            main
+     0000500D  _PC_CR1                            main
+     0000500E  _PC_CR2                            main
+     0000500F  _PD_ODR                            main
+     00005010  _PD_IDR                            main
+     00005011  _PD_DDR                            main
+     00005012  _PD_CR1                            main
+     00005013  _PD_CR2                            main
+     00005014  _PE_ODR                            main
+     00005015  _PE_IDR                            main
+     00005016  _PE_DDR                            main
+     00005017  _PE_CR1                            main
+     00005018  _PE_CR2                            main
+     00005019  _PF_ODR                            main
+     0000501A  _PF_IDR                            main
+     0000501B  _PF_DDR                            main
+     0000501C  _PF_CR1                            main
+     0000501D  _PF_CR2                            main
+     0000501E  _PG_ODR                            main
+ASxxxx Linker V03.00/V05.40 + sdld,  page 2.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     0000501F  _PG_IDR                            main
+     00005020  _PG_DDR                            main
+     00005021  _PG_CR1                            main
+     00005022  _PG_CR2                            main
+     00005028  _PI_ODR                            main
+     00005029  _PI_IDR                            main
+     0000502A  _PI_DDR                            main
+     0000502B  _PI_CR1                            main
+     0000502C  _PI_CR2                            main
+     0000505A  _FLASH_CR1                         main
+     0000505B  _FLASH_CR2                         main
+     0000505C  _FLASH_NCR2                        main
+     0000505D  _FLASH_FPR                         main
+     0000505E  _FLASH_NFPR                        main
+     0000505F  _FLASH_IAPSR                       main
+     00005062  _FLASH_PUKR                        main
+     00005064  _FLASH_DUKR                        main
+     000050A0  _EXTI_CR1                          main
+     000050A1  _EXTI_CR2                          main
+     000050B3  _RST_SR                            main
+     000050C0  _CLK_ICKR                          main
+     000050C1  _CLK_ECKR                          main
+     000050C3  _CLK_CMSR                          main
+     000050C4  _CLK_SWR                           main
+     000050C5  _CLK_SWCR                          main
+     000050C6  _CLK_CKDIVR                        main
+     000050C7  _CLK_PCKENR1                       main
+     000050C8  _CLK_CSSR                          main
+     000050C9  _CLK_CCOR                          main
+     000050CA  _CLK_PCKENR2                       main
+     000050CB  _CLK_CANCCR                        main
+     000050CC  _CLK_HSITRIMR                      main
+     000050CD  _CLK_SWIMCCR                       main
+     000050D1  _WWDG_CR                           main
+     000050D2  _WWDG_WR                           main
+     000050E0  _IWDG_KR                           main
+     000050E1  _IWDG_PR                           main
+     000050E2  _IWDG_RLR                          main
+     000050F0  _AWU_CSR                           main
+     000050F1  _AWU_APR                           main
+     000050F2  _AWU_TBR                           main
+     000050F3  _BEEP_CSR                          main
+     00005200  _SPI_CR1                           main
+     00005201  _SPI_CR2                           main
+     00005202  _SPI_ICR                           main
+     00005203  _SPI_SR                            main
+     00005204  _SPI_DR                            main
+     00005205  _SPI_CRCPR                         main
+     00005206  _SPI_RXCRCR                        main
+     00005207  _SPI_TXCRCR                        main
+     00005210  _I2C_CR1                           main
+ASxxxx Linker V03.00/V05.40 + sdld,  page 3.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00005211  _I2C_CR2                           main
+     00005212  _I2C_FREQR                         main
+     00005213  _I2C_OARL                          main
+     00005214  _I2C_OARH                          main
+     00005216  _I2C_DR                            main
+     00005217  _I2C_SR1                           main
+     00005218  _I2C_SR2                           main
+     00005219  _I2C_SR3                           main
+     0000521A  _I2C_ITR                           main
+     0000521B  _I2C_CCRL                          main
+     0000521C  _I2C_CCRH                          main
+     0000521D  _I2C_TRISER                        main
+     0000521E  _I2C_PECR                          main
+     00005230  _UART1_SR                          main
+     00005231  _UART1_DR                          main
+     00005232  _UART1_BRR1                        main
+     00005233  _UART1_BRR2                        main
+     00005234  _UART1_CR1                         main
+     00005235  _UART1_CR2                         main
+     00005236  _UART1_CR3                         main
+     00005237  _UART1_CR4                         main
+     00005238  _UART1_CR5                         main
+     00005239  _UART1_GTR                         main
+     0000523A  _UART1_PSCR                        main
+     00005240  _UART3_SR                          main
+     00005241  _UART3_DR                          main
+     00005242  _UART3_BRR1                        main
+     00005243  _UART3_BRR2                        main
+     00005244  _UART3_CR1                         main
+     00005245  _UART3_CR2                         main
+     00005246  _UART3_CR3                         main
+     00005247  _UART3_CR4                         main
+     00005249  _UART3_CR6                         main
+     00005250  _TIM1_CR1                          main
+     00005251  _TIM1_CR2                          main
+     00005252  _TIM1_SMCR                         main
+     00005253  _TIM1_ETR                          main
+     00005254  _TIM1_IER                          main
+     00005255  _TIM1_SR1                          main
+     00005256  _TIM1_SR2                          main
+     00005257  _TIM1_EGR                          main
+     00005258  _TIM1_CCMR1                        main
+     00005259  _TIM1_CCMR2                        main
+     0000525A  _TIM1_CCMR3                        main
+     0000525B  _TIM1_CCMR4                        main
+     0000525C  _TIM1_CCER1                        main
+     0000525D  _TIM1_CCER2                        main
+     0000525E  _TIM1_CNTR                         main
+     0000525E  _TIM1_CNTRH                        main
+     0000525F  _TIM1_CNTRL                        main
+     00005260  _TIM1_PSCR                         main
+ASxxxx Linker V03.00/V05.40 + sdld,  page 4.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00005260  _TIM1_PSCRH                        main
+     00005261  _TIM1_PSCRL                        main
+     00005262  _TIM1_ARR                          main
+     00005262  _TIM1_ARRH                         main
+     00005263  _TIM1_ARRL                         main
+     00005264  _TIM1_RCR                          main
+     00005265  _TIM1_CCR1                         main
+     00005265  _TIM1_CCR1H                        main
+     00005266  _TIM1_CCR1L                        main
+     00005267  _TIM1_CCR2                         main
+     00005267  _TIM1_CCR2H                        main
+     00005268  _TIM1_CCR2L                        main
+     00005269  _TIM1_CCR3                         main
+     00005269  _TIM1_CCR3H                        main
+     0000526A  _TIM1_CCR3L                        main
+     0000526B  _TIM1_CCR4                         main
+     0000526B  _TIM1_CCR4H                        main
+     0000526C  _TIM1_CCR4L                        main
+     0000526D  _TIM1_BKR                          main
+     0000526E  _TIM1_DTR                          main
+     0000526F  _TIM1_OISR                         main
+     00005300  _TIM2_CR1                          main
+     00005301  _TIM2_IER                          main
+     00005302  _TIM2_SR1                          main
+     00005303  _TIM2_SR2                          main
+     00005304  _TIM2_EGR                          main
+     00005305  _TIM2_CCMR1                        main
+     00005306  _TIM2_CCMR2                        main
+     00005307  _TIM2_CCMR3                        main
+     00005308  _TIM2_CCER1                        main
+     00005309  _TIM2_CCER2                        main
+     0000530A  _TIM2_CNTR                         main
+     0000530A  _TIM2_CNTRH                        main
+     0000530B  _TIM2_CNTRL                        main
+     0000530C  _TIM2_PSCR                         main
+     0000530D  _TIM2_ARR                          main
+     0000530D  _TIM2_ARRH                         main
+     0000530E  _TIM2_ARRL                         main
+     0000530F  _TIM2_CCR1                         main
+     0000530F  _TIM2_CCR1H                        main
+     00005310  _TIM2_CCR1L                        main
+     00005311  _TIM2_CCR2                         main
+     00005311  _TIM2_CCR2H                        main
+     00005312  _TIM2_CCR2L                        main
+     00005313  _TIM2_CCR3                         main
+     00005313  _TIM2_CCR3H                        main
+     00005314  _TIM2_CCR3L                        main
+     00005320  _TIM3_CR1                          main
+     00005321  _TIM3_IER                          main
+     00005322  _TIM3_SR1                          main
+     00005323  _TIM3_SR2                          main
+ASxxxx Linker V03.00/V05.40 + sdld,  page 5.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00005324  _TIM3_EGR                          main
+     00005325  _TIM3_CCMR1                        main
+     00005326  _TIM3_CCMR2                        main
+     00005327  _TIM3_CCER1                        main
+     00005328  _TIM3_CNTR                         main
+     00005328  _TIM3_CNTRH                        main
+     00005329  _TIM3_CNTRL                        main
+     0000532A  _TIM3_PSCR                         main
+     0000532B  _TIM3_ARR                          main
+     0000532B  _TIM3_ARRH                         main
+     0000532C  _TIM3_ARRL                         main
+     0000532D  _TIM3_CCR1                         main
+     0000532D  _TIM3_CCR1H                        main
+     0000532E  _TIM3_CCR1L                        main
+     0000532F  _TIM3_CCR2                         main
+     0000532F  _TIM3_CCR2H                        main
+     00005330  _TIM3_CCR2L                        main
+     00005340  _TIM4_CR1                          main
+     00005341  _TIM4_IER                          main
+     00005342  _TIM4_SR                           main
+     00005343  _TIM4_EGR                          main
+     00005344  _TIM4_CNTR                         main
+     00005345  _TIM4_PSCR                         main
+     00005346  _TIM4_ARR                          main
+     00005400  _ADC_CSR                           main
+     00005401  _ADC_CR1                           main
+     00005402  _ADC_CR2                           main
+     00005404  _ADC_DR                            main
+     00005404  _ADC_DRH                           main
+     00005405  _ADC_DRL                           main
+     00005406  _ADC_TDR                           main
+     00005406  _ADC_TDRH                          main
+     00005407  _ADC_TDRL                          main
+     00005420  _CAN_MCR                           main
+     00005421  _CAN_MSR                           main
+     00005422  _CAN_TSR                           main
+     00005423  _CAN_TPR                           main
+     00005424  _CAN_RFR                           main
+     00005425  _CAN_IER                           main
+     00005426  _CAN_DGR                           main
+     00005427  _CAN_FPSR                          main
+     00005428  _CAN_P0                            main
+     00005429  _CAN_P1                            main
+     0000542A  _CAN_P2                            main
+     0000542B  _CAN_P3                            main
+     0000542C  _CAN_P4                            main
+     0000542D  _CAN_P5                            main
+     0000542E  _CAN_P6                            main
+     0000542F  _CAN_P7                            main
+     00005430  _CAN_P8                            main
+     00005431  _CAN_P9                            main
+ASxxxx Linker V03.00/V05.40 + sdld,  page 6.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00005432  _CAN_PA                            main
+     00005433  _CAN_PB                            main
+     00005434  _CAN_PC                            main
+     00005435  _CAN_PD                            main
+     00005436  _CAN_PE                            main
+     00005437  _CAN_PF                            main
+     00007F60  _CFG_GCR                           main
+     00007F70  _ITC_SPR1                          main
+     00007F71  _ITC_SPR2                          main
+     00007F72  _ITC_SPR3                          main
+     00007F73  _ITC_SPR4                          main
+     00007F74  _ITC_SPR5                          main
+     00007F75  _ITC_SPR6                          main
+     00007F76  _ITC_SPR7                          main
+     00008000  s_HOME                          
+     00008007  s_GSINIT                        
+     0000802A  s_GSFINAL                       
+     0000802D  s_CODE                          
+     0000802D  s_CONST                         
+     0000802D  s_INITIALIZER                   
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 7.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+SSEG                                00000001    00000001 =           1. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00/V05.40 + sdld,  page 8.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+HOME                                00008000    00000007 =           7. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00/V05.40 + sdld,  page 9.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT                              00008007    00000023 =          35. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00/V05.40 + sdld,  page 10.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSFINAL                             0000802A    00000003 =           3. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00/V05.40 + sdld,  page 11.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CODE                                0000802D    00000087 =         135. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     0000802D  _main                              main
+     000080B2  ___sdcc_external_startup           _startup
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 12.
+
+Files Linked                              [ module(s) ]
+
+main.rel                                  [ main ]
+
+
+Libraries Linked                          [ object file ]
+
+/opt/homebrew/bin/../share/sdcc/lib/stm8/stm8.lib
+                                          [ _startup.rel ]
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 13.
+
+User Base Address Definitions
+
+HOME = 0x8000
+DATA = 0x0001
+
+
