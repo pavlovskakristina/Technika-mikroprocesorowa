@@ -25,7 +25,7 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000003  l_GSFINAL                       
      00000007  l_HOME                          
      00000023  l_GSINIT                        
-     00000087  l_CODE                          
+     00000086  l_CODE                          
      00005000  _PA_ODR                            main
      00005001  _PA_IDR                            main
      00005002  _PA_DDR                            main
@@ -368,12 +368,12 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CODE                                0000802D    00000087 =         135. bytes (REL,CON)
+CODE                                0000802D    00000086 =         134. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
      0000802D  _main                              main
-     000080B2  ___sdcc_external_startup           _startup
+     000080B1  ___sdcc_external_startup           _startup
 
 ASxxxx Linker V03.00/V05.40 + sdld,  page 12.
 

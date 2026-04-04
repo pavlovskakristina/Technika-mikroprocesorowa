@@ -1,11 +1,4 @@
 #include "stm8s208r.h"
-// Laby 2, zadanie 2
-// Przytrzymanie:
-    // S1 włączy diodę D1,
-    // S1 i S2 diodę D2,
-    // S1 i S2 i S3 diodę D3,
-    //  domyślnie diody wyłączone
-
 
 void main(void)
 {
@@ -37,19 +30,45 @@ void main(void)
     PC_DDR |= (1<<7);
     PC_CR1 |= (1<<7);
     PC_CR2 |= (1<<7);
-        
+    
     //Dioda D3
     PC_DDR |= (1<<6);
     PC_CR1 |= (1<<6);
     PC_CR2 |= (1<<6);
-    
-    //Dioda D4
-    PE_DDR |= (1<<5);
-    PE_CR1 |= (1<<5);
-    PE_CR2 |= (1<<5);
-    
+
     while (1)
     {
-
+        // włączamy S1
+        if ((PB_IDR & (1<<4)) == 0)
+        {
+            PC_ODR  &= ~(1<<5); // włączamy D1
+            
+            // włączamy S2 i D2
+            if ((PB_IDR & (1<<3)) == 0) // S1, S2 wciśnięte
+            {
+                PC_ODR  &= ~(1<<7); // włączamy D2
+                
+                // włączamy S3 i D3
+                if ((PB_IDR & (1<<2)) == 0) // S1, S2, S3 wciśnięte
+                {
+                    PC_ODR  &= ~(1<<6); // włączamy D3
+                }
+                //wyłączamy S1, S2, S3
+                else { PC_ODR |= (1<<6); } // wyłączamy D3
+            }
+            //wyłączamy S1, S2
+            else
+            {
+                PC_ODR |= (1<<7); // wyłączamy D2
+                PC_ODR |= (1<<6); // wyłączamy D3
+            }
+        }
+        // wyłączamy S1
+        else
+        {
+            PC_ODR |= (1<<5); // wyłączamy D1
+            PC_ODR |= (1<<7); // wyłączamy D2
+            PC_ODR |= (1<<6); // wyłączamy D3
+        }
     }
 }

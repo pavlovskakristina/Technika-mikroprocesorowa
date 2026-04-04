@@ -547,7 +547,7 @@
                                     547 	.area GSINIT
                                     548 	.area GSFINAL
                                     549 	.area GSINIT
-      008007 CD 80 B2         [ 4]  550 	call	___sdcc_external_startup
+      008007 CD 80 B1         [ 4]  550 	call	___sdcc_external_startup
       00800A 4D               [ 1]  551 	tnz	a
       00800B 27 03            [ 1]  552 	jreq	__sdcc_init_data
       00800D CC 80 04         [ 2]  553 	jp	__sdcc_program_startup
@@ -583,84 +583,83 @@
                                     583 ; code
                                     584 ;--------------------------------------------------------
                                     585 	.area CODE
-                                    586 ;	main.c: 10: void main(void)
+                                    586 ;	main.c: 3: void main(void)
                                     587 ;	-----------------------------------------
                                     588 ;	 function main
                                     589 ;	-----------------------------------------
       00802D                        590 _main:
-                                    591 ;	main.c: 15: PB_DDR &= ~(1<<4);
+                                    591 ;	main.c: 8: PB_DDR &= ~(1<<4);
       00802D 72 19 50 07      [ 1]  592 	bres	_PB_DDR+0, #4
-                                    593 ;	main.c: 16: PB_CR1 &= ~(1<<4);
+                                    593 ;	main.c: 9: PB_CR1 &= ~(1<<4);
       008031 72 19 50 08      [ 1]  594 	bres	_PB_CR1+0, #4
-                                    595 ;	main.c: 17: PB_CR2 &= ~(1<<4);
+                                    595 ;	main.c: 10: PB_CR2 &= ~(1<<4);
       008035 72 19 50 09      [ 1]  596 	bres	_PB_CR2+0, #4
-                                    597 ;	main.c: 20: PB_DDR &= ~(1<<3);
+                                    597 ;	main.c: 13: PB_DDR &= ~(1<<3);
       008039 72 17 50 07      [ 1]  598 	bres	_PB_DDR+0, #3
-                                    599 ;	main.c: 21: PB_CR1 &= ~(1<<3);
+                                    599 ;	main.c: 14: PB_CR1 &= ~(1<<3);
       00803D 72 17 50 08      [ 1]  600 	bres	_PB_CR1+0, #3
-                                    601 ;	main.c: 22: PB_CR2 &= ~(1<<3);
+                                    601 ;	main.c: 15: PB_CR2 &= ~(1<<3);
       008041 72 17 50 09      [ 1]  602 	bres	_PB_CR2+0, #3
-                                    603 ;	main.c: 25: PB_DDR &= ~(1<<2);
+                                    603 ;	main.c: 18: PB_DDR &= ~(1<<2);
       008045 72 15 50 07      [ 1]  604 	bres	_PB_DDR+0, #2
-                                    605 ;	main.c: 26: PB_CR1 &= ~(1<<2);
+                                    605 ;	main.c: 19: PB_CR1 &= ~(1<<2);
       008049 72 15 50 08      [ 1]  606 	bres	_PB_CR1+0, #2
-                                    607 ;	main.c: 27: PB_CR2 &= ~(1<<2);
+                                    607 ;	main.c: 20: PB_CR2 &= ~(1<<2);
       00804D 72 15 50 09      [ 1]  608 	bres	_PB_CR2+0, #2
-                                    609 ;	main.c: 32: PC_DDR |= (1<<5);
+                                    609 ;	main.c: 25: PC_DDR |= (1<<5);
       008051 72 1A 50 0C      [ 1]  610 	bset	_PC_DDR+0, #5
-                                    611 ;	main.c: 33: PC_CR1 |= (1<<5);
+                                    611 ;	main.c: 26: PC_CR1 |= (1<<5);
       008055 72 1A 50 0D      [ 1]  612 	bset	_PC_CR1+0, #5
-                                    613 ;	main.c: 34: PC_CR2 |= (1<<5);
+                                    613 ;	main.c: 27: PC_CR2 |= (1<<5);
       008059 72 1A 50 0E      [ 1]  614 	bset	_PC_CR2+0, #5
-                                    615 ;	main.c: 37: PC_DDR |= (1<<7);
+                                    615 ;	main.c: 30: PC_DDR |= (1<<7);
       00805D 72 1E 50 0C      [ 1]  616 	bset	_PC_DDR+0, #7
-                                    617 ;	main.c: 38: PC_CR1 |= (1<<7);
+                                    617 ;	main.c: 31: PC_CR1 |= (1<<7);
       008061 72 1E 50 0D      [ 1]  618 	bset	_PC_CR1+0, #7
-                                    619 ;	main.c: 39: PC_CR2 |= (1<<7);
+                                    619 ;	main.c: 32: PC_CR2 |= (1<<7);
       008065 72 1E 50 0E      [ 1]  620 	bset	_PC_CR2+0, #7
-                                    621 ;	main.c: 42: PC_DDR |= (1<<6);
+                                    621 ;	main.c: 35: PC_DDR |= (1<<6);
       008069 72 1C 50 0C      [ 1]  622 	bset	_PC_DDR+0, #6
-                                    623 ;	main.c: 43: PC_CR1 |= (1<<6);
+                                    623 ;	main.c: 36: PC_CR1 |= (1<<6);
       00806D 72 1C 50 0D      [ 1]  624 	bset	_PC_CR1+0, #6
-                                    625 ;	main.c: 44: PC_CR2 |= (1<<6);
+                                    625 ;	main.c: 37: PC_CR2 |= (1<<6);
       008071 72 1C 50 0E      [ 1]  626 	bset	_PC_CR2+0, #6
-                                    627 ;	main.c: 47: PE_DDR |= (1<<5);
-      008075 72 1A 50 16      [ 1]  628 	bset	_PE_DDR+0, #5
-                                    629 ;	main.c: 48: PE_CR1 |= (1<<5);
-      008079 72 1A 50 17      [ 1]  630 	bset	_PE_CR1+0, #5
-                                    631 ;	main.c: 49: PE_CR2 |= (1<<5);
-      00807D 72 1A 50 18      [ 1]  632 	bset	_PE_CR2+0, #5
-                                    633 ;	main.c: 51: while (1)
-      008081                        634 00108$:
-                                    635 ;	main.c: 53: if ((PB_IDR & (1<<4)) == 0){
-      008081 72 08 50 06 0A   [ 2]  636 	btjt	_PB_IDR+0, #4, 00102$
-                                    637 ;	main.c: 54: PC_ODR &= ~(1<<5);
-      008086 72 1B 50 0A      [ 1]  638 	bres	_PC_ODR+0, #5
-                                    639 ;	main.c: 55: PC_ODR &= ~(1<<7);
-      00808A 72 1F 50 0A      [ 1]  640 	bres	_PC_ODR+0, #7
-      00808E 20 08            [ 2]  641 	jra	00103$
-      008090                        642 00102$:
-                                    643 ;	main.c: 58: PC_ODR |= (1<<5);
-      008090 72 1A 50 0A      [ 1]  644 	bset	_PC_ODR+0, #5
-                                    645 ;	main.c: 59: PC_ODR |= (1<<7);
-      008094 72 1E 50 0A      [ 1]  646 	bset	_PC_ODR+0, #7
-      008098                        647 00103$:
-                                    648 ;	main.c: 62: if ((PB_IDR & (1<<3)) == 0){
-      008098 72 06 50 06 0A   [ 2]  649 	btjt	_PB_IDR+0, #3, 00105$
-                                    650 ;	main.c: 63: PC_ODR &= ~(1<<6);
-      00809D 72 1D 50 0A      [ 1]  651 	bres	_PC_ODR+0, #6
-                                    652 ;	main.c: 64: PE_ODR &= ~(1<<5);
-      0080A1 72 1B 50 14      [ 1]  653 	bres	_PE_ODR+0, #5
-      0080A5 20 DA            [ 2]  654 	jra	00108$
-      0080A7                        655 00105$:
-                                    656 ;	main.c: 67: PC_ODR |= (1<<6);
-      0080A7 72 1C 50 0A      [ 1]  657 	bset	_PC_ODR+0, #6
-                                    658 ;	main.c: 68: PE_ODR |= (1<<5);
-      0080AB 72 1A 50 14      [ 1]  659 	bset	_PE_ODR+0, #5
-      0080AF 20 D0            [ 2]  660 	jra	00108$
-                                    661 ;	main.c: 71: }
-      0080B1 81               [ 4]  662 	ret
-                                    663 	.area CODE
-                                    664 	.area CONST
-                                    665 	.area INITIALIZER
-                                    666 	.area CABS (ABS)
+                                    627 ;	main.c: 39: while (1)
+      008075                        628 00111$:
+                                    629 ;	main.c: 42: if ((PB_IDR & (1<<4)) == 0)
+      008075 72 08 50 06 28   [ 2]  630 	btjt	_PB_IDR+0, #4, 00108$
+                                    631 ;	main.c: 44: PC_ODR  &= ~(1<<5); // włączamy D1
+      00807A 72 1B 50 0A      [ 1]  632 	bres	_PC_ODR+0, #5
+                                    633 ;	main.c: 47: if ((PB_IDR & (1<<3)) == 0) // S1, S2 wciśnięte
+      00807E 72 06 50 06 15   [ 2]  634 	btjt	_PB_IDR+0, #3, 00105$
+                                    635 ;	main.c: 49: PC_ODR  &= ~(1<<7); // włączamy D2
+      008083 72 1F 50 0A      [ 1]  636 	bres	_PC_ODR+0, #7
+                                    637 ;	main.c: 52: if ((PB_IDR & (1<<2)) == 0) // S1, S2, S3 wciśnięte
+      008087 72 04 50 06 06   [ 2]  638 	btjt	_PB_IDR+0, #2, 00102$
+                                    639 ;	main.c: 54: PC_ODR  &= ~(1<<6); // włączamy D3
+      00808C 72 1D 50 0A      [ 1]  640 	bres	_PC_ODR+0, #6
+      008090 20 E3            [ 2]  641 	jra	00111$
+      008092                        642 00102$:
+                                    643 ;	main.c: 57: else { PC_ODR |= (1<<6); } // wyłączamy D3
+      008092 72 1C 50 0A      [ 1]  644 	bset	_PC_ODR+0, #6
+      008096 20 DD            [ 2]  645 	jra	00111$
+      008098                        646 00105$:
+                                    647 ;	main.c: 62: PC_ODR |= (1<<7); // wyłączamy D2
+      008098 72 1E 50 0A      [ 1]  648 	bset	_PC_ODR+0, #7
+                                    649 ;	main.c: 63: PC_ODR |= (1<<6); // wyłączamy D3
+      00809C 72 1C 50 0A      [ 1]  650 	bset	_PC_ODR+0, #6
+      0080A0 20 D3            [ 2]  651 	jra	00111$
+      0080A2                        652 00108$:
+                                    653 ;	main.c: 69: PC_ODR |= (1<<5); // wyłączamy D1
+      0080A2 72 1A 50 0A      [ 1]  654 	bset	_PC_ODR+0, #5
+                                    655 ;	main.c: 70: PC_ODR |= (1<<7); // wyłączamy D2
+      0080A6 72 1E 50 0A      [ 1]  656 	bset	_PC_ODR+0, #7
+                                    657 ;	main.c: 71: PC_ODR |= (1<<6); // wyłączamy D3
+      0080AA 72 1C 50 0A      [ 1]  658 	bset	_PC_ODR+0, #6
+      0080AE 20 C5            [ 2]  659 	jra	00111$
+                                    660 ;	main.c: 74: }
+      0080B0 81               [ 4]  661 	ret
+                                    662 	.area CODE
+                                    663 	.area CONST
+                                    664 	.area INITIALIZER
+                                    665 	.area CABS (ABS)

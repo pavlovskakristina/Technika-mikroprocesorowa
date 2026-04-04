@@ -583,82 +583,81 @@ __sdcc_program_startup:
 ; code
 ;--------------------------------------------------------
 	.area CODE
-;	main.c: 10: void main(void)
+;	main.c: 3: void main(void)
 ;	-----------------------------------------
 ;	 function main
 ;	-----------------------------------------
 _main:
-;	main.c: 15: PB_DDR &= ~(1<<4);
+;	main.c: 8: PB_DDR &= ~(1<<4);
 	bres	_PB_DDR+0, #4
-;	main.c: 16: PB_CR1 &= ~(1<<4);
+;	main.c: 9: PB_CR1 &= ~(1<<4);
 	bres	_PB_CR1+0, #4
-;	main.c: 17: PB_CR2 &= ~(1<<4);
+;	main.c: 10: PB_CR2 &= ~(1<<4);
 	bres	_PB_CR2+0, #4
-;	main.c: 20: PB_DDR &= ~(1<<3);
+;	main.c: 13: PB_DDR &= ~(1<<3);
 	bres	_PB_DDR+0, #3
-;	main.c: 21: PB_CR1 &= ~(1<<3);
+;	main.c: 14: PB_CR1 &= ~(1<<3);
 	bres	_PB_CR1+0, #3
-;	main.c: 22: PB_CR2 &= ~(1<<3);
+;	main.c: 15: PB_CR2 &= ~(1<<3);
 	bres	_PB_CR2+0, #3
-;	main.c: 25: PB_DDR &= ~(1<<2);
+;	main.c: 18: PB_DDR &= ~(1<<2);
 	bres	_PB_DDR+0, #2
-;	main.c: 26: PB_CR1 &= ~(1<<2);
+;	main.c: 19: PB_CR1 &= ~(1<<2);
 	bres	_PB_CR1+0, #2
-;	main.c: 27: PB_CR2 &= ~(1<<2);
+;	main.c: 20: PB_CR2 &= ~(1<<2);
 	bres	_PB_CR2+0, #2
-;	main.c: 32: PC_DDR |= (1<<5);
+;	main.c: 25: PC_DDR |= (1<<5);
 	bset	_PC_DDR+0, #5
-;	main.c: 33: PC_CR1 |= (1<<5);
+;	main.c: 26: PC_CR1 |= (1<<5);
 	bset	_PC_CR1+0, #5
-;	main.c: 34: PC_CR2 |= (1<<5);
+;	main.c: 27: PC_CR2 |= (1<<5);
 	bset	_PC_CR2+0, #5
-;	main.c: 37: PC_DDR |= (1<<7);
+;	main.c: 30: PC_DDR |= (1<<7);
 	bset	_PC_DDR+0, #7
-;	main.c: 38: PC_CR1 |= (1<<7);
+;	main.c: 31: PC_CR1 |= (1<<7);
 	bset	_PC_CR1+0, #7
-;	main.c: 39: PC_CR2 |= (1<<7);
+;	main.c: 32: PC_CR2 |= (1<<7);
 	bset	_PC_CR2+0, #7
-;	main.c: 42: PC_DDR |= (1<<6);
+;	main.c: 35: PC_DDR |= (1<<6);
 	bset	_PC_DDR+0, #6
-;	main.c: 43: PC_CR1 |= (1<<6);
+;	main.c: 36: PC_CR1 |= (1<<6);
 	bset	_PC_CR1+0, #6
-;	main.c: 44: PC_CR2 |= (1<<6);
+;	main.c: 37: PC_CR2 |= (1<<6);
 	bset	_PC_CR2+0, #6
-;	main.c: 47: PE_DDR |= (1<<5);
-	bset	_PE_DDR+0, #5
-;	main.c: 48: PE_CR1 |= (1<<5);
-	bset	_PE_CR1+0, #5
-;	main.c: 49: PE_CR2 |= (1<<5);
-	bset	_PE_CR2+0, #5
-;	main.c: 51: while (1)
-00108$:
-;	main.c: 53: if ((PB_IDR & (1<<4)) == 0){
-	btjt	_PB_IDR+0, #4, 00102$
-;	main.c: 54: PC_ODR &= ~(1<<5);
+;	main.c: 39: while (1)
+00111$:
+;	main.c: 42: if ((PB_IDR & (1<<4)) == 0)
+	btjt	_PB_IDR+0, #4, 00108$
+;	main.c: 44: PC_ODR  &= ~(1<<5); // włączamy D1
 	bres	_PC_ODR+0, #5
-;	main.c: 55: PC_ODR &= ~(1<<7);
-	bres	_PC_ODR+0, #7
-	jra	00103$
-00102$:
-;	main.c: 58: PC_ODR |= (1<<5);
-	bset	_PC_ODR+0, #5
-;	main.c: 59: PC_ODR |= (1<<7);
-	bset	_PC_ODR+0, #7
-00103$:
-;	main.c: 62: if ((PB_IDR & (1<<3)) == 0){
+;	main.c: 47: if ((PB_IDR & (1<<3)) == 0) // S1, S2 wciśnięte
 	btjt	_PB_IDR+0, #3, 00105$
-;	main.c: 63: PC_ODR &= ~(1<<6);
+;	main.c: 49: PC_ODR  &= ~(1<<7); // włączamy D2
+	bres	_PC_ODR+0, #7
+;	main.c: 52: if ((PB_IDR & (1<<2)) == 0) // S1, S2, S3 wciśnięte
+	btjt	_PB_IDR+0, #2, 00102$
+;	main.c: 54: PC_ODR  &= ~(1<<6); // włączamy D3
 	bres	_PC_ODR+0, #6
-;	main.c: 64: PE_ODR &= ~(1<<5);
-	bres	_PE_ODR+0, #5
-	jra	00108$
-00105$:
-;	main.c: 67: PC_ODR |= (1<<6);
+	jra	00111$
+00102$:
+;	main.c: 57: else { PC_ODR |= (1<<6); } // wyłączamy D3
 	bset	_PC_ODR+0, #6
-;	main.c: 68: PE_ODR |= (1<<5);
-	bset	_PE_ODR+0, #5
-	jra	00108$
-;	main.c: 71: }
+	jra	00111$
+00105$:
+;	main.c: 62: PC_ODR |= (1<<7); // wyłączamy D2
+	bset	_PC_ODR+0, #7
+;	main.c: 63: PC_ODR |= (1<<6); // wyłączamy D3
+	bset	_PC_ODR+0, #6
+	jra	00111$
+00108$:
+;	main.c: 69: PC_ODR |= (1<<5); // wyłączamy D1
+	bset	_PC_ODR+0, #5
+;	main.c: 70: PC_ODR |= (1<<7); // wyłączamy D2
+	bset	_PC_ODR+0, #7
+;	main.c: 71: PC_ODR |= (1<<6); // wyłączamy D3
+	bset	_PC_ODR+0, #6
+	jra	00111$
+;	main.c: 74: }
 	ret
 	.area CODE
 	.area CONST
