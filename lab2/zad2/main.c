@@ -1,3 +1,9 @@
+// TREŚĆ ZADANIA
+// Przytrzymanie S1 włączy diodę D1,
+// Przytrzymanie S1 i S2 włączy diodę D2,
+// Przytrzymanie S1 i S2 i S3 diodę D3,
+// domyślnie diody wyłączone
+
 #include "stm8s208r.h"
 
 // Numer diody i PIN
