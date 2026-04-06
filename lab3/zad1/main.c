@@ -15,7 +15,7 @@ void main(void){
 	EXTI_CR2 |= (1<<1);
 	EXTI_CR2 &= ~(1<<0);
 	
-    // TO JEST KLUCZOWA ZMIANA:
+    // TO JEST KLUCZOWA ZMIANA: (na macbooku)
     __asm__("rim");
 	
 	while(1)
