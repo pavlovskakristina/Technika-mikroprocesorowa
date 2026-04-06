@@ -1,3 +1,6 @@
+// Puszczenie przycisku B1 wywoła przerwanie które zmieni stan diody LD2,
+    // domyślnie dioda wyłączona
+
 #include "stm8s208r.h"
 void main(void){
 
