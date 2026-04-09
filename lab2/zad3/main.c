@@ -19,17 +19,17 @@
 #define S2 3
 #define S3 2
 
-void delay(char ms)
+void delay(char time)
 {
     int i = 0;
-    for (i = 0; i < (ms * 100); i++)
+    for (i = 0; i < (time); i++)
     {
     }
 }
 
 void main(void)
 {
-    char choice = 0; // S3 wybiera 1 = D4, 2 = D3, 3 = D2, 4 = D1, S2 = wylacza, S1 = wlacza
+    char choice = 1; // S3 wybiera 1 = D4, 2 = D3, 3 = D2, 4 = D1, S2 = wylacza, S1 = wlacza
 
     // ====== PRZYCISKI ====== //
 
@@ -57,7 +57,7 @@ void main(void)
     {
         if ((PB_IDR & (1 << S3)) == 0)
         {
-            delay(10);
+            delay(1000);
             if ((PB_IDR & (1 << S3)) == 0)
             {
                 choice = choice + 1;
@@ -67,7 +67,7 @@ void main(void)
                 }
 
                 while ((PB_IDR & (1 << S3)) == 0);
-                delay(10);
+                delay(1000);
             }
         }
 
