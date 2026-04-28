@@ -2,6 +2,10 @@
  *
  * Copyright (c) 2002-2005 STMicroelectronics
  */
+
+// TIM4 generuje przerwania stan na diodzie co 1s,
+// S1 wybierze diodę (D3 i D4 lub D2 i D1 )
+
 #define D1 5 // Port C
 #define D2 7
 #define D3 6
@@ -45,6 +49,7 @@ void main(void)
 	PB_CR1 &= ~(1 << S1);
 	PB_CR2 &= ~(1 << S1);
 
+	/* WYŁACZAMY WSZYSKIE DIODY  (wysoki stan == nie świeca)  */
 	PC_ODR |= (1 << D1);
 	PC_ODR |= (1 << D2);
 	PC_ODR |= (1 << D3);
