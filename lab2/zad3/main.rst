@@ -1,0 +1,743 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ISO C Compiler
+                                      3 ; Version 4.5.0 #15242 (Mac OS X ppc)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module main
+                                      6 	
+                                      7 ;--------------------------------------------------------
+                                      8 ; Public variables in this module
+                                      9 ;--------------------------------------------------------
+                                     10 	.globl _main
+                                     11 	.globl _delay
+                                     12 	.globl _ITC_SPR7
+                                     13 	.globl _ITC_SPR6
+                                     14 	.globl _ITC_SPR5
+                                     15 	.globl _ITC_SPR4
+                                     16 	.globl _ITC_SPR3
+                                     17 	.globl _ITC_SPR2
+                                     18 	.globl _ITC_SPR1
+                                     19 	.globl _CFG_GCR
+                                     20 	.globl _CAN_PF
+                                     21 	.globl _CAN_PE
+                                     22 	.globl _CAN_PD
+                                     23 	.globl _CAN_PC
+                                     24 	.globl _CAN_PB
+                                     25 	.globl _CAN_PA
+                                     26 	.globl _CAN_P9
+                                     27 	.globl _CAN_P8
+                                     28 	.globl _CAN_P7
+                                     29 	.globl _CAN_P6
+                                     30 	.globl _CAN_P5
+                                     31 	.globl _CAN_P4
+                                     32 	.globl _CAN_P3
+                                     33 	.globl _CAN_P2
+                                     34 	.globl _CAN_P1
+                                     35 	.globl _CAN_P0
+                                     36 	.globl _CAN_FPSR
+                                     37 	.globl _CAN_DGR
+                                     38 	.globl _CAN_IER
+                                     39 	.globl _CAN_RFR
+                                     40 	.globl _CAN_TPR
+                                     41 	.globl _CAN_TSR
+                                     42 	.globl _CAN_MSR
+                                     43 	.globl _CAN_MCR
+                                     44 	.globl _ADC_TDRL
+                                     45 	.globl _ADC_TDRH
+                                     46 	.globl _ADC_TDR
+                                     47 	.globl _ADC_DRL
+                                     48 	.globl _ADC_DRH
+                                     49 	.globl _ADC_DR
+                                     50 	.globl _ADC_CR2
+                                     51 	.globl _ADC_CR1
+                                     52 	.globl _ADC_CSR
+                                     53 	.globl _TIM4_ARR
+                                     54 	.globl _TIM4_PSCR
+                                     55 	.globl _TIM4_CNTR
+                                     56 	.globl _TIM4_EGR
+                                     57 	.globl _TIM4_SR
+                                     58 	.globl _TIM4_IER
+                                     59 	.globl _TIM4_CR1
+                                     60 	.globl _TIM3_CCR2L
+                                     61 	.globl _TIM3_CCR2H
+                                     62 	.globl _TIM3_CCR2
+                                     63 	.globl _TIM3_CCR1L
+                                     64 	.globl _TIM3_CCR1H
+                                     65 	.globl _TIM3_CCR1
+                                     66 	.globl _TIM3_ARRL
+                                     67 	.globl _TIM3_ARRH
+                                     68 	.globl _TIM3_ARR
+                                     69 	.globl _TIM3_PSCR
+                                     70 	.globl _TIM3_CNTRL
+                                     71 	.globl _TIM3_CNTRH
+                                     72 	.globl _TIM3_CNTR
+                                     73 	.globl _TIM3_CCER1
+                                     74 	.globl _TIM3_CCMR2
+                                     75 	.globl _TIM3_CCMR1
+                                     76 	.globl _TIM3_EGR
+                                     77 	.globl _TIM3_SR2
+                                     78 	.globl _TIM3_SR1
+                                     79 	.globl _TIM3_IER
+                                     80 	.globl _TIM3_CR1
+                                     81 	.globl _TIM2_CCR3L
+                                     82 	.globl _TIM2_CCR3H
+                                     83 	.globl _TIM2_CCR3
+                                     84 	.globl _TIM2_CCR2L
+                                     85 	.globl _TIM2_CCR2H
+                                     86 	.globl _TIM2_CCR2
+                                     87 	.globl _TIM2_CCR1L
+                                     88 	.globl _TIM2_CCR1H
+                                     89 	.globl _TIM2_CCR1
+                                     90 	.globl _TIM2_ARRL
+                                     91 	.globl _TIM2_ARRH
+                                     92 	.globl _TIM2_ARR
+                                     93 	.globl _TIM2_PSCR
+                                     94 	.globl _TIM2_CNTRL
+                                     95 	.globl _TIM2_CNTRH
+                                     96 	.globl _TIM2_CNTR
+                                     97 	.globl _TIM2_CCER2
+                                     98 	.globl _TIM2_CCER1
+                                     99 	.globl _TIM2_CCMR3
+                                    100 	.globl _TIM2_CCMR2
+                                    101 	.globl _TIM2_CCMR1
+                                    102 	.globl _TIM2_EGR
+                                    103 	.globl _TIM2_SR2
+                                    104 	.globl _TIM2_SR1
+                                    105 	.globl _TIM2_IER
+                                    106 	.globl _TIM2_CR1
+                                    107 	.globl _TIM1_OISR
+                                    108 	.globl _TIM1_DTR
+                                    109 	.globl _TIM1_BKR
+                                    110 	.globl _TIM1_CCR4L
+                                    111 	.globl _TIM1_CCR4H
+                                    112 	.globl _TIM1_CCR4
+                                    113 	.globl _TIM1_CCR3L
+                                    114 	.globl _TIM1_CCR3H
+                                    115 	.globl _TIM1_CCR3
+                                    116 	.globl _TIM1_CCR2L
+                                    117 	.globl _TIM1_CCR2H
+                                    118 	.globl _TIM1_CCR2
+                                    119 	.globl _TIM1_CCR1L
+                                    120 	.globl _TIM1_CCR1H
+                                    121 	.globl _TIM1_CCR1
+                                    122 	.globl _TIM1_RCR
+                                    123 	.globl _TIM1_ARRL
+                                    124 	.globl _TIM1_ARRH
+                                    125 	.globl _TIM1_ARR
+                                    126 	.globl _TIM1_PSCRL
+                                    127 	.globl _TIM1_PSCRH
+                                    128 	.globl _TIM1_PSCR
+                                    129 	.globl _TIM1_CNTRL
+                                    130 	.globl _TIM1_CNTRH
+                                    131 	.globl _TIM1_CNTR
+                                    132 	.globl _TIM1_CCER2
+                                    133 	.globl _TIM1_CCER1
+                                    134 	.globl _TIM1_CCMR4
+                                    135 	.globl _TIM1_CCMR3
+                                    136 	.globl _TIM1_CCMR2
+                                    137 	.globl _TIM1_CCMR1
+                                    138 	.globl _TIM1_EGR
+                                    139 	.globl _TIM1_SR2
+                                    140 	.globl _TIM1_SR1
+                                    141 	.globl _TIM1_IER
+                                    142 	.globl _TIM1_ETR
+                                    143 	.globl _TIM1_SMCR
+                                    144 	.globl _TIM1_CR2
+                                    145 	.globl _TIM1_CR1
+                                    146 	.globl _UART3_CR6
+                                    147 	.globl _UART3_CR4
+                                    148 	.globl _UART3_CR3
+                                    149 	.globl _UART3_CR2
+                                    150 	.globl _UART3_CR1
+                                    151 	.globl _UART3_BRR2
+                                    152 	.globl _UART3_BRR1
+                                    153 	.globl _UART3_DR
+                                    154 	.globl _UART3_SR
+                                    155 	.globl _UART1_PSCR
+                                    156 	.globl _UART1_GTR
+                                    157 	.globl _UART1_CR5
+                                    158 	.globl _UART1_CR4
+                                    159 	.globl _UART1_CR3
+                                    160 	.globl _UART1_CR2
+                                    161 	.globl _UART1_CR1
+                                    162 	.globl _UART1_BRR2
+                                    163 	.globl _UART1_BRR1
+                                    164 	.globl _UART1_DR
+                                    165 	.globl _UART1_SR
+                                    166 	.globl _I2C_PECR
+                                    167 	.globl _I2C_TRISER
+                                    168 	.globl _I2C_CCRH
+                                    169 	.globl _I2C_CCRL
+                                    170 	.globl _I2C_ITR
+                                    171 	.globl _I2C_SR3
+                                    172 	.globl _I2C_SR2
+                                    173 	.globl _I2C_SR1
+                                    174 	.globl _I2C_DR
+                                    175 	.globl _I2C_OARH
+                                    176 	.globl _I2C_OARL
+                                    177 	.globl _I2C_FREQR
+                                    178 	.globl _I2C_CR2
+                                    179 	.globl _I2C_CR1
+                                    180 	.globl _SPI_TXCRCR
+                                    181 	.globl _SPI_RXCRCR
+                                    182 	.globl _SPI_CRCPR
+                                    183 	.globl _SPI_DR
+                                    184 	.globl _SPI_SR
+                                    185 	.globl _SPI_ICR
+                                    186 	.globl _SPI_CR2
+                                    187 	.globl _SPI_CR1
+                                    188 	.globl _BEEP_CSR
+                                    189 	.globl _AWU_TBR
+                                    190 	.globl _AWU_APR
+                                    191 	.globl _AWU_CSR
+                                    192 	.globl _IWDG_RLR
+                                    193 	.globl _IWDG_PR
+                                    194 	.globl _IWDG_KR
+                                    195 	.globl _WWDG_WR
+                                    196 	.globl _WWDG_CR
+                                    197 	.globl _CLK_SWIMCCR
+                                    198 	.globl _CLK_HSITRIMR
+                                    199 	.globl _CLK_CANCCR
+                                    200 	.globl _CLK_PCKENR2
+                                    201 	.globl _CLK_CCOR
+                                    202 	.globl _CLK_CSSR
+                                    203 	.globl _CLK_PCKENR1
+                                    204 	.globl _CLK_CKDIVR
+                                    205 	.globl _CLK_SWCR
+                                    206 	.globl _CLK_SWR
+                                    207 	.globl _CLK_CMSR
+                                    208 	.globl _CLK_ECKR
+                                    209 	.globl _CLK_ICKR
+                                    210 	.globl _RST_SR
+                                    211 	.globl _EXTI_CR2
+                                    212 	.globl _EXTI_CR1
+                                    213 	.globl _FLASH_DUKR
+                                    214 	.globl _FLASH_PUKR
+                                    215 	.globl _FLASH_IAPSR
+                                    216 	.globl _FLASH_NFPR
+                                    217 	.globl _FLASH_FPR
+                                    218 	.globl _FLASH_NCR2
+                                    219 	.globl _FLASH_CR2
+                                    220 	.globl _FLASH_CR1
+                                    221 	.globl _PI_CR2
+                                    222 	.globl _PI_CR1
+                                    223 	.globl _PI_DDR
+                                    224 	.globl _PI_IDR
+                                    225 	.globl _PI_ODR
+                                    226 	.globl _PG_CR2
+                                    227 	.globl _PG_CR1
+                                    228 	.globl _PG_DDR
+                                    229 	.globl _PG_IDR
+                                    230 	.globl _PG_ODR
+                                    231 	.globl _PF_CR2
+                                    232 	.globl _PF_CR1
+                                    233 	.globl _PF_DDR
+                                    234 	.globl _PF_IDR
+                                    235 	.globl _PF_ODR
+                                    236 	.globl _PE_CR2
+                                    237 	.globl _PE_CR1
+                                    238 	.globl _PE_DDR
+                                    239 	.globl _PE_IDR
+                                    240 	.globl _PE_ODR
+                                    241 	.globl _PD_CR2
+                                    242 	.globl _PD_CR1
+                                    243 	.globl _PD_DDR
+                                    244 	.globl _PD_IDR
+                                    245 	.globl _PD_ODR
+                                    246 	.globl _PC_CR2
+                                    247 	.globl _PC_CR1
+                                    248 	.globl _PC_DDR
+                                    249 	.globl _PC_IDR
+                                    250 	.globl _PC_ODR
+                                    251 	.globl _PB_CR2
+                                    252 	.globl _PB_CR1
+                                    253 	.globl _PB_DDR
+                                    254 	.globl _PB_IDR
+                                    255 	.globl _PB_ODR
+                                    256 	.globl _PA_CR2
+                                    257 	.globl _PA_CR1
+                                    258 	.globl _PA_DDR
+                                    259 	.globl _PA_IDR
+                                    260 	.globl _PA_ODR
+                                    261 ;--------------------------------------------------------
+                                    262 ; ram data
+                                    263 ;--------------------------------------------------------
+                                    264 	.area DATA
+                           005000   265 _PA_ODR	=	0x5000
+                           005001   266 _PA_IDR	=	0x5001
+                           005002   267 _PA_DDR	=	0x5002
+                           005003   268 _PA_CR1	=	0x5003
+                           005004   269 _PA_CR2	=	0x5004
+                           005005   270 _PB_ODR	=	0x5005
+                           005006   271 _PB_IDR	=	0x5006
+                           005007   272 _PB_DDR	=	0x5007
+                           005008   273 _PB_CR1	=	0x5008
+                           005009   274 _PB_CR2	=	0x5009
+                           00500A   275 _PC_ODR	=	0x500a
+                           00500B   276 _PC_IDR	=	0x500b
+                           00500C   277 _PC_DDR	=	0x500c
+                           00500D   278 _PC_CR1	=	0x500d
+                           00500E   279 _PC_CR2	=	0x500e
+                           00500F   280 _PD_ODR	=	0x500f
+                           005010   281 _PD_IDR	=	0x5010
+                           005011   282 _PD_DDR	=	0x5011
+                           005012   283 _PD_CR1	=	0x5012
+                           005013   284 _PD_CR2	=	0x5013
+                           005014   285 _PE_ODR	=	0x5014
+                           005015   286 _PE_IDR	=	0x5015
+                           005016   287 _PE_DDR	=	0x5016
+                           005017   288 _PE_CR1	=	0x5017
+                           005018   289 _PE_CR2	=	0x5018
+                           005019   290 _PF_ODR	=	0x5019
+                           00501A   291 _PF_IDR	=	0x501a
+                           00501B   292 _PF_DDR	=	0x501b
+                           00501C   293 _PF_CR1	=	0x501c
+                           00501D   294 _PF_CR2	=	0x501d
+                           00501E   295 _PG_ODR	=	0x501e
+                           00501F   296 _PG_IDR	=	0x501f
+                           005020   297 _PG_DDR	=	0x5020
+                           005021   298 _PG_CR1	=	0x5021
+                           005022   299 _PG_CR2	=	0x5022
+                           005028   300 _PI_ODR	=	0x5028
+                           005029   301 _PI_IDR	=	0x5029
+                           00502A   302 _PI_DDR	=	0x502a
+                           00502B   303 _PI_CR1	=	0x502b
+                           00502C   304 _PI_CR2	=	0x502c
+                           00505A   305 _FLASH_CR1	=	0x505a
+                           00505B   306 _FLASH_CR2	=	0x505b
+                           00505C   307 _FLASH_NCR2	=	0x505c
+                           00505D   308 _FLASH_FPR	=	0x505d
+                           00505E   309 _FLASH_NFPR	=	0x505e
+                           00505F   310 _FLASH_IAPSR	=	0x505f
+                           005062   311 _FLASH_PUKR	=	0x5062
+                           005064   312 _FLASH_DUKR	=	0x5064
+                           0050A0   313 _EXTI_CR1	=	0x50a0
+                           0050A1   314 _EXTI_CR2	=	0x50a1
+                           0050B3   315 _RST_SR	=	0x50b3
+                           0050C0   316 _CLK_ICKR	=	0x50c0
+                           0050C1   317 _CLK_ECKR	=	0x50c1
+                           0050C3   318 _CLK_CMSR	=	0x50c3
+                           0050C4   319 _CLK_SWR	=	0x50c4
+                           0050C5   320 _CLK_SWCR	=	0x50c5
+                           0050C6   321 _CLK_CKDIVR	=	0x50c6
+                           0050C7   322 _CLK_PCKENR1	=	0x50c7
+                           0050C8   323 _CLK_CSSR	=	0x50c8
+                           0050C9   324 _CLK_CCOR	=	0x50c9
+                           0050CA   325 _CLK_PCKENR2	=	0x50ca
+                           0050CB   326 _CLK_CANCCR	=	0x50cb
+                           0050CC   327 _CLK_HSITRIMR	=	0x50cc
+                           0050CD   328 _CLK_SWIMCCR	=	0x50cd
+                           0050D1   329 _WWDG_CR	=	0x50d1
+                           0050D2   330 _WWDG_WR	=	0x50d2
+                           0050E0   331 _IWDG_KR	=	0x50e0
+                           0050E1   332 _IWDG_PR	=	0x50e1
+                           0050E2   333 _IWDG_RLR	=	0x50e2
+                           0050F0   334 _AWU_CSR	=	0x50f0
+                           0050F1   335 _AWU_APR	=	0x50f1
+                           0050F2   336 _AWU_TBR	=	0x50f2
+                           0050F3   337 _BEEP_CSR	=	0x50f3
+                           005200   338 _SPI_CR1	=	0x5200
+                           005201   339 _SPI_CR2	=	0x5201
+                           005202   340 _SPI_ICR	=	0x5202
+                           005203   341 _SPI_SR	=	0x5203
+                           005204   342 _SPI_DR	=	0x5204
+                           005205   343 _SPI_CRCPR	=	0x5205
+                           005206   344 _SPI_RXCRCR	=	0x5206
+                           005207   345 _SPI_TXCRCR	=	0x5207
+                           005210   346 _I2C_CR1	=	0x5210
+                           005211   347 _I2C_CR2	=	0x5211
+                           005212   348 _I2C_FREQR	=	0x5212
+                           005213   349 _I2C_OARL	=	0x5213
+                           005214   350 _I2C_OARH	=	0x5214
+                           005216   351 _I2C_DR	=	0x5216
+                           005217   352 _I2C_SR1	=	0x5217
+                           005218   353 _I2C_SR2	=	0x5218
+                           005219   354 _I2C_SR3	=	0x5219
+                           00521A   355 _I2C_ITR	=	0x521a
+                           00521B   356 _I2C_CCRL	=	0x521b
+                           00521C   357 _I2C_CCRH	=	0x521c
+                           00521D   358 _I2C_TRISER	=	0x521d
+                           00521E   359 _I2C_PECR	=	0x521e
+                           005230   360 _UART1_SR	=	0x5230
+                           005231   361 _UART1_DR	=	0x5231
+                           005232   362 _UART1_BRR1	=	0x5232
+                           005233   363 _UART1_BRR2	=	0x5233
+                           005234   364 _UART1_CR1	=	0x5234
+                           005235   365 _UART1_CR2	=	0x5235
+                           005236   366 _UART1_CR3	=	0x5236
+                           005237   367 _UART1_CR4	=	0x5237
+                           005238   368 _UART1_CR5	=	0x5238
+                           005239   369 _UART1_GTR	=	0x5239
+                           00523A   370 _UART1_PSCR	=	0x523a
+                           005240   371 _UART3_SR	=	0x5240
+                           005241   372 _UART3_DR	=	0x5241
+                           005242   373 _UART3_BRR1	=	0x5242
+                           005243   374 _UART3_BRR2	=	0x5243
+                           005244   375 _UART3_CR1	=	0x5244
+                           005245   376 _UART3_CR2	=	0x5245
+                           005246   377 _UART3_CR3	=	0x5246
+                           005247   378 _UART3_CR4	=	0x5247
+                           005249   379 _UART3_CR6	=	0x5249
+                           005250   380 _TIM1_CR1	=	0x5250
+                           005251   381 _TIM1_CR2	=	0x5251
+                           005252   382 _TIM1_SMCR	=	0x5252
+                           005253   383 _TIM1_ETR	=	0x5253
+                           005254   384 _TIM1_IER	=	0x5254
+                           005255   385 _TIM1_SR1	=	0x5255
+                           005256   386 _TIM1_SR2	=	0x5256
+                           005257   387 _TIM1_EGR	=	0x5257
+                           005258   388 _TIM1_CCMR1	=	0x5258
+                           005259   389 _TIM1_CCMR2	=	0x5259
+                           00525A   390 _TIM1_CCMR3	=	0x525a
+                           00525B   391 _TIM1_CCMR4	=	0x525b
+                           00525C   392 _TIM1_CCER1	=	0x525c
+                           00525D   393 _TIM1_CCER2	=	0x525d
+                           00525E   394 _TIM1_CNTR	=	0x525e
+                           00525E   395 _TIM1_CNTRH	=	0x525e
+                           00525F   396 _TIM1_CNTRL	=	0x525f
+                           005260   397 _TIM1_PSCR	=	0x5260
+                           005260   398 _TIM1_PSCRH	=	0x5260
+                           005261   399 _TIM1_PSCRL	=	0x5261
+                           005262   400 _TIM1_ARR	=	0x5262
+                           005262   401 _TIM1_ARRH	=	0x5262
+                           005263   402 _TIM1_ARRL	=	0x5263
+                           005264   403 _TIM1_RCR	=	0x5264
+                           005265   404 _TIM1_CCR1	=	0x5265
+                           005265   405 _TIM1_CCR1H	=	0x5265
+                           005266   406 _TIM1_CCR1L	=	0x5266
+                           005267   407 _TIM1_CCR2	=	0x5267
+                           005267   408 _TIM1_CCR2H	=	0x5267
+                           005268   409 _TIM1_CCR2L	=	0x5268
+                           005269   410 _TIM1_CCR3	=	0x5269
+                           005269   411 _TIM1_CCR3H	=	0x5269
+                           00526A   412 _TIM1_CCR3L	=	0x526a
+                           00526B   413 _TIM1_CCR4	=	0x526b
+                           00526B   414 _TIM1_CCR4H	=	0x526b
+                           00526C   415 _TIM1_CCR4L	=	0x526c
+                           00526D   416 _TIM1_BKR	=	0x526d
+                           00526E   417 _TIM1_DTR	=	0x526e
+                           00526F   418 _TIM1_OISR	=	0x526f
+                           005300   419 _TIM2_CR1	=	0x5300
+                           005301   420 _TIM2_IER	=	0x5301
+                           005302   421 _TIM2_SR1	=	0x5302
+                           005303   422 _TIM2_SR2	=	0x5303
+                           005304   423 _TIM2_EGR	=	0x5304
+                           005305   424 _TIM2_CCMR1	=	0x5305
+                           005306   425 _TIM2_CCMR2	=	0x5306
+                           005307   426 _TIM2_CCMR3	=	0x5307
+                           005308   427 _TIM2_CCER1	=	0x5308
+                           005309   428 _TIM2_CCER2	=	0x5309
+                           00530A   429 _TIM2_CNTR	=	0x530a
+                           00530A   430 _TIM2_CNTRH	=	0x530a
+                           00530B   431 _TIM2_CNTRL	=	0x530b
+                           00530C   432 _TIM2_PSCR	=	0x530c
+                           00530D   433 _TIM2_ARR	=	0x530d
+                           00530D   434 _TIM2_ARRH	=	0x530d
+                           00530E   435 _TIM2_ARRL	=	0x530e
+                           00530F   436 _TIM2_CCR1	=	0x530f
+                           00530F   437 _TIM2_CCR1H	=	0x530f
+                           005310   438 _TIM2_CCR1L	=	0x5310
+                           005311   439 _TIM2_CCR2	=	0x5311
+                           005311   440 _TIM2_CCR2H	=	0x5311
+                           005312   441 _TIM2_CCR2L	=	0x5312
+                           005313   442 _TIM2_CCR3	=	0x5313
+                           005313   443 _TIM2_CCR3H	=	0x5313
+                           005314   444 _TIM2_CCR3L	=	0x5314
+                           005320   445 _TIM3_CR1	=	0x5320
+                           005321   446 _TIM3_IER	=	0x5321
+                           005322   447 _TIM3_SR1	=	0x5322
+                           005323   448 _TIM3_SR2	=	0x5323
+                           005324   449 _TIM3_EGR	=	0x5324
+                           005325   450 _TIM3_CCMR1	=	0x5325
+                           005326   451 _TIM3_CCMR2	=	0x5326
+                           005327   452 _TIM3_CCER1	=	0x5327
+                           005328   453 _TIM3_CNTR	=	0x5328
+                           005328   454 _TIM3_CNTRH	=	0x5328
+                           005329   455 _TIM3_CNTRL	=	0x5329
+                           00532A   456 _TIM3_PSCR	=	0x532a
+                           00532B   457 _TIM3_ARR	=	0x532b
+                           00532B   458 _TIM3_ARRH	=	0x532b
+                           00532C   459 _TIM3_ARRL	=	0x532c
+                           00532D   460 _TIM3_CCR1	=	0x532d
+                           00532D   461 _TIM3_CCR1H	=	0x532d
+                           00532E   462 _TIM3_CCR1L	=	0x532e
+                           00532F   463 _TIM3_CCR2	=	0x532f
+                           00532F   464 _TIM3_CCR2H	=	0x532f
+                           005330   465 _TIM3_CCR2L	=	0x5330
+                           005340   466 _TIM4_CR1	=	0x5340
+                           005341   467 _TIM4_IER	=	0x5341
+                           005342   468 _TIM4_SR	=	0x5342
+                           005343   469 _TIM4_EGR	=	0x5343
+                           005344   470 _TIM4_CNTR	=	0x5344
+                           005345   471 _TIM4_PSCR	=	0x5345
+                           005346   472 _TIM4_ARR	=	0x5346
+                           005400   473 _ADC_CSR	=	0x5400
+                           005401   474 _ADC_CR1	=	0x5401
+                           005402   475 _ADC_CR2	=	0x5402
+                           005404   476 _ADC_DR	=	0x5404
+                           005404   477 _ADC_DRH	=	0x5404
+                           005405   478 _ADC_DRL	=	0x5405
+                           005406   479 _ADC_TDR	=	0x5406
+                           005406   480 _ADC_TDRH	=	0x5406
+                           005407   481 _ADC_TDRL	=	0x5407
+                           005420   482 _CAN_MCR	=	0x5420
+                           005421   483 _CAN_MSR	=	0x5421
+                           005422   484 _CAN_TSR	=	0x5422
+                           005423   485 _CAN_TPR	=	0x5423
+                           005424   486 _CAN_RFR	=	0x5424
+                           005425   487 _CAN_IER	=	0x5425
+                           005426   488 _CAN_DGR	=	0x5426
+                           005427   489 _CAN_FPSR	=	0x5427
+                           005428   490 _CAN_P0	=	0x5428
+                           005429   491 _CAN_P1	=	0x5429
+                           00542A   492 _CAN_P2	=	0x542a
+                           00542B   493 _CAN_P3	=	0x542b
+                           00542C   494 _CAN_P4	=	0x542c
+                           00542D   495 _CAN_P5	=	0x542d
+                           00542E   496 _CAN_P6	=	0x542e
+                           00542F   497 _CAN_P7	=	0x542f
+                           005430   498 _CAN_P8	=	0x5430
+                           005431   499 _CAN_P9	=	0x5431
+                           005432   500 _CAN_PA	=	0x5432
+                           005433   501 _CAN_PB	=	0x5433
+                           005434   502 _CAN_PC	=	0x5434
+                           005435   503 _CAN_PD	=	0x5435
+                           005436   504 _CAN_PE	=	0x5436
+                           005437   505 _CAN_PF	=	0x5437
+                           007F60   506 _CFG_GCR	=	0x7f60
+                           007F70   507 _ITC_SPR1	=	0x7f70
+                           007F71   508 _ITC_SPR2	=	0x7f71
+                           007F72   509 _ITC_SPR3	=	0x7f72
+                           007F73   510 _ITC_SPR4	=	0x7f73
+                           007F74   511 _ITC_SPR5	=	0x7f74
+                           007F75   512 _ITC_SPR6	=	0x7f75
+                           007F76   513 _ITC_SPR7	=	0x7f76
+                                    514 ;--------------------------------------------------------
+                                    515 ; ram data
+                                    516 ;--------------------------------------------------------
+                                    517 	.area INITIALIZED
+                                    518 ;--------------------------------------------------------
+                                    519 ; Stack segment in internal ram
+                                    520 ;--------------------------------------------------------
+                                    521 	.area SSEG
+      000001                        522 __start__stack:
+      000001                        523 	.ds	1
+                                    524 
+                                    525 ;--------------------------------------------------------
+                                    526 ; absolute external ram data
+                                    527 ;--------------------------------------------------------
+                                    528 	.area DABS (ABS)
+                                    529 
+                                    530 ; default segment ordering for linker
+                                    531 	.area HOME
+                                    532 	.area GSINIT
+                                    533 	.area GSFINAL
+                                    534 	.area CONST
+                                    535 	.area INITIALIZER
+                                    536 	.area CODE
+                                    537 
+                                    538 ;--------------------------------------------------------
+                                    539 ; interrupt vector
+                                    540 ;--------------------------------------------------------
+                                    541 	.area HOME
+      008000                        542 __interrupt_vect:
+      008000 82 00 80 07            543 	int s_GSINIT ; reset
+                                    544 ;--------------------------------------------------------
+                                    545 ; global & static initialisations
+                                    546 ;--------------------------------------------------------
+                                    547 	.area HOME
+                                    548 	.area GSINIT
+                                    549 	.area GSFINAL
+                                    550 	.area GSINIT
+      008007 CD 81 0E         [ 4]  551 	call	___sdcc_external_startup
+      00800A 4D               [ 1]  552 	tnz	a
+      00800B 27 03            [ 1]  553 	jreq	__sdcc_init_data
+      00800D CC 80 04         [ 2]  554 	jp	__sdcc_program_startup
+      008010                        555 __sdcc_init_data:
+                                    556 ; stm8_genXINIT() start
+      008010 AE 00 00         [ 2]  557 	ldw x, #l_DATA
+      008013 27 07            [ 1]  558 	jreq	00002$
+      008015                        559 00001$:
+      008015 72 4F 00 00      [ 1]  560 	clr (s_DATA - 1, x)
+      008019 5A               [ 2]  561 	decw x
+      00801A 26 F9            [ 1]  562 	jrne	00001$
+      00801C                        563 00002$:
+      00801C AE 00 00         [ 2]  564 	ldw	x, #l_INITIALIZER
+      00801F 27 09            [ 1]  565 	jreq	00004$
+      008021                        566 00003$:
+      008021 D6 80 2C         [ 1]  567 	ld	a, (s_INITIALIZER - 1, x)
+      008024 D7 00 00         [ 1]  568 	ld	(s_INITIALIZED - 1, x), a
+      008027 5A               [ 2]  569 	decw	x
+      008028 26 F7            [ 1]  570 	jrne	00003$
+      00802A                        571 00004$:
+                                    572 ; stm8_genXINIT() end
+                                    573 	.area GSFINAL
+      00802A CC 80 04         [ 2]  574 	jp	__sdcc_program_startup
+                                    575 ;--------------------------------------------------------
+                                    576 ; Home
+                                    577 ;--------------------------------------------------------
+                                    578 	.area HOME
+                                    579 	.area HOME
+      008004                        580 __sdcc_program_startup:
+      008004 CC 80 3E         [ 2]  581 	jp	_main
+                                    582 ;	return from main will return to caller
+                                    583 ;--------------------------------------------------------
+                                    584 ; code
+                                    585 ;--------------------------------------------------------
+                                    586 	.area CODE
+                                    587 ;	main.c: 22: void delay(char time)
+                                    588 ;	-----------------------------------------
+                                    589 ;	 function delay
+                                    590 ;	-----------------------------------------
+      00802D                        591 _delay:
+      00802D 52 02            [ 2]  592 	sub	sp, #2
+                                    593 ;	main.c: 25: for (i = 0; i < (time); i++)
+      00802F 5F               [ 1]  594 	clrw	x
+      008030                        595 00103$:
+      008030 6B 02            [ 1]  596 	ld	(0x02, sp), a
+      008032 0F 01            [ 1]  597 	clr	(0x01, sp)
+      008034 13 01            [ 2]  598 	cpw	x, (0x01, sp)
+      008036 2E 03            [ 1]  599 	jrsge	00105$
+      008038 5C               [ 1]  600 	incw	x
+      008039 20 F5            [ 2]  601 	jra	00103$
+      00803B                        602 00105$:
+                                    603 ;	main.c: 28: }
+      00803B 5B 02            [ 2]  604 	addw	sp, #2
+      00803D 81               [ 4]  605 	ret
+                                    606 ;	main.c: 30: void main(void)
+                                    607 ;	-----------------------------------------
+                                    608 ;	 function main
+                                    609 ;	-----------------------------------------
+      00803E                        610 _main:
+      00803E 88               [ 1]  611 	push	a
+                                    612 ;	main.c: 32: char choice = 1; // S3 wybiera 1 = D4, 2 = D3, 3 = D2, 4 = D1, S2 = wylacza, S1 = wlacza
+      00803F A6 01            [ 1]  613 	ld	a, #0x01
+      008041 6B 01            [ 1]  614 	ld	(0x01, sp), a
+                                    615 ;	main.c: 36: PB_DDR &= ~((1 << S1) | (1 << S2) | (1 << S3));
+      008043 C6 50 07         [ 1]  616 	ld	a, _PB_DDR+0
+      008046 A4 E3            [ 1]  617 	and	a, #0xe3
+      008048 C7 50 07         [ 1]  618 	ld	_PB_DDR+0, a
+                                    619 ;	main.c: 37: PB_CR1 &= ~((1 << S1) | (1 << S2) | (1 << S3));
+      00804B C6 50 08         [ 1]  620 	ld	a, _PB_CR1+0
+      00804E A4 E3            [ 1]  621 	and	a, #0xe3
+      008050 C7 50 08         [ 1]  622 	ld	_PB_CR1+0, a
+                                    623 ;	main.c: 38: PB_CR2 &= ~((1 << S1) | (1 << S2) | (1 << S3));
+      008053 C6 50 09         [ 1]  624 	ld	a, _PB_CR2+0
+      008056 A4 E3            [ 1]  625 	and	a, #0xe3
+      008058 C7 50 09         [ 1]  626 	ld	_PB_CR2+0, a
+                                    627 ;	main.c: 42: PC_DDR |= (1 << D1) | (1 << D2) | (1 << D3); // DDR do trzech diod (optymalizacja kodu)
+      00805B C6 50 0C         [ 1]  628 	ld	a, _PC_DDR+0
+      00805E AA E0            [ 1]  629 	or	a, #0xe0
+      008060 C7 50 0C         [ 1]  630 	ld	_PC_DDR+0, a
+                                    631 ;	main.c: 43: PC_CR1 |= (1 << D1) | (1 << D2) | (1 << D3); // CR1 do trzech diod (optymalizacja kodu)
+      008063 C6 50 0D         [ 1]  632 	ld	a, _PC_CR1+0
+      008066 AA E0            [ 1]  633 	or	a, #0xe0
+      008068 C7 50 0D         [ 1]  634 	ld	_PC_CR1+0, a
+                                    635 ;	main.c: 44: PC_CR2 |= (1 << D1) | (1 << D2) | (1 << D3); // CR2 do trzech diod (optymalizacja kodu)
+      00806B C6 50 0E         [ 1]  636 	ld	a, _PC_CR2+0
+      00806E AA E0            [ 1]  637 	or	a, #0xe0
+      008070 C7 50 0E         [ 1]  638 	ld	_PC_CR2+0, a
+                                    639 ;	main.c: 48: PE_DDR |= (1 << D4);
+      008073 72 1A 50 16      [ 1]  640 	bset	_PE_DDR+0, #5
+                                    641 ;	main.c: 49: PE_CR1 |= (1 << D4);
+      008077 72 1A 50 17      [ 1]  642 	bset	_PE_CR1+0, #5
+                                    643 ;	main.c: 50: PE_CR2 |= (1 << D4);
+      00807B 72 1A 50 18      [ 1]  644 	bset	_PE_CR2+0, #5
+                                    645 ;	main.c: 53: PC_ODR |= (1 << D1) | (1 << D2) | (1 << D3);
+      00807F C6 50 0A         [ 1]  646 	ld	a, _PC_ODR+0
+      008082 AA E0            [ 1]  647 	or	a, #0xe0
+      008084 C7 50 0A         [ 1]  648 	ld	_PC_ODR+0, a
+                                    649 ;	main.c: 54: PE_ODR |= (1 << D4);
+      008087 72 1A 50 14      [ 1]  650 	bset	_PE_ODR+0, #5
+                                    651 ;	main.c: 56: while (1)
+      00808B                        652 00131$:
+                                    653 ;	main.c: 58: if ((PB_IDR & (1 << S3)) == 0)
+      00808B 72 04 50 06 21   [ 2]  654 	btjt	_PB_IDR+0, #2, 00109$
+                                    655 ;	main.c: 60: delay(1000);
+      008090 A6 E8            [ 1]  656 	ld	a, #0xe8
+      008092 CD 80 2D         [ 4]  657 	call	_delay
+                                    658 ;	main.c: 61: if ((PB_IDR & (1 << S3)) == 0)
+      008095 72 04 50 06 17   [ 2]  659 	btjt	_PB_IDR+0, #2, 00109$
+                                    660 ;	main.c: 63: choice = choice + 1;
+      00809A 7B 01            [ 1]  661 	ld	a, (0x01, sp)
+      00809C 4C               [ 1]  662 	inc	a
+                                    663 ;	main.c: 64: if (choice > 4)
+      00809D 6B 01            [ 1]  664 	ld	(0x01, sp), a
+      00809F A1 04            [ 1]  665 	cp	a, #0x04
+      0080A1 23 04            [ 2]  666 	jrule	00103$
+                                    667 ;	main.c: 66: choice = 1;
+      0080A3 A6 01            [ 1]  668 	ld	a, #0x01
+      0080A5 6B 01            [ 1]  669 	ld	(0x01, sp), a
+                                    670 ;	main.c: 69: while ((PB_IDR & (1 << S3)) == 0);
+      0080A7                        671 00103$:
+      0080A7 72 05 50 06 FB   [ 2]  672 	btjf	_PB_IDR+0, #2, 00103$
+                                    673 ;	main.c: 70: delay(1000);
+      0080AC A6 E8            [ 1]  674 	ld	a, #0xe8
+      0080AE CD 80 2D         [ 4]  675 	call	_delay
+      0080B1                        676 00109$:
+                                    677 ;	main.c: 75: if ((PB_IDR & (1 << S1)) == 0)
+      0080B1 72 08 50 06 27   [ 2]  678 	btjt	_PB_IDR+0, #4, 00119$
+                                    679 ;	main.c: 77: if (choice == 1)
+      0080B6 7B 01            [ 1]  680 	ld	a, (0x01, sp)
+      0080B8 4A               [ 1]  681 	dec	a
+      0080B9 26 04            [ 1]  682 	jrne	00111$
+                                    683 ;	main.c: 78: PC_ODR |= (1 << D1);
+      0080BB 72 1A 50 0A      [ 1]  684 	bset	_PC_ODR+0, #5
+      0080BF                        685 00111$:
+                                    686 ;	main.c: 79: if (choice == 2)
+      0080BF 7B 01            [ 1]  687 	ld	a, (0x01, sp)
+      0080C1 A1 02            [ 1]  688 	cp	a, #0x02
+      0080C3 26 04            [ 1]  689 	jrne	00113$
+                                    690 ;	main.c: 80: PC_ODR |= (1 << D2);
+      0080C5 72 1E 50 0A      [ 1]  691 	bset	_PC_ODR+0, #7
+      0080C9                        692 00113$:
+                                    693 ;	main.c: 81: if (choice == 3)
+      0080C9 7B 01            [ 1]  694 	ld	a, (0x01, sp)
+      0080CB A1 03            [ 1]  695 	cp	a, #0x03
+      0080CD 26 04            [ 1]  696 	jrne	00115$
+                                    697 ;	main.c: 82: PC_ODR |= (1 << D3);
+      0080CF 72 1C 50 0A      [ 1]  698 	bset	_PC_ODR+0, #6
+      0080D3                        699 00115$:
+                                    700 ;	main.c: 83: if (choice == 4)
+      0080D3 7B 01            [ 1]  701 	ld	a, (0x01, sp)
+      0080D5 A1 04            [ 1]  702 	cp	a, #0x04
+      0080D7 26 04            [ 1]  703 	jrne	00119$
+                                    704 ;	main.c: 84: PE_ODR |= (1 << D4);
+      0080D9 72 1A 50 14      [ 1]  705 	bset	_PE_ODR+0, #5
+      0080DD                        706 00119$:
+                                    707 ;	main.c: 88: if ((PB_IDR & (1 << S2)) == 0)
+      0080DD 72 06 50 06 A9   [ 2]  708 	btjt	_PB_IDR+0, #3, 00131$
+                                    709 ;	main.c: 90: if (choice == 1)
+      0080E2 7B 01            [ 1]  710 	ld	a, (0x01, sp)
+      0080E4 4A               [ 1]  711 	dec	a
+      0080E5 26 04            [ 1]  712 	jrne	00121$
+                                    713 ;	main.c: 91: PC_ODR &= ~(1 << D1);
+      0080E7 72 1B 50 0A      [ 1]  714 	bres	_PC_ODR+0, #5
+      0080EB                        715 00121$:
+                                    716 ;	main.c: 92: if (choice == 2)
+      0080EB 7B 01            [ 1]  717 	ld	a, (0x01, sp)
+      0080ED A1 02            [ 1]  718 	cp	a, #0x02
+      0080EF 26 04            [ 1]  719 	jrne	00123$
+                                    720 ;	main.c: 93: PC_ODR &= ~(1 << D2);
+      0080F1 72 1F 50 0A      [ 1]  721 	bres	_PC_ODR+0, #7
+      0080F5                        722 00123$:
+                                    723 ;	main.c: 94: if (choice == 3)
+      0080F5 7B 01            [ 1]  724 	ld	a, (0x01, sp)
+      0080F7 A1 03            [ 1]  725 	cp	a, #0x03
+      0080F9 26 04            [ 1]  726 	jrne	00125$
+                                    727 ;	main.c: 95: PC_ODR &= ~(1 << D3);
+      0080FB 72 1D 50 0A      [ 1]  728 	bres	_PC_ODR+0, #6
+      0080FF                        729 00125$:
+                                    730 ;	main.c: 96: if (choice == 4)
+      0080FF 7B 01            [ 1]  731 	ld	a, (0x01, sp)
+      008101 A1 04            [ 1]  732 	cp	a, #0x04
+      008103 26 86            [ 1]  733 	jrne	00131$
+                                    734 ;	main.c: 97: PE_ODR &= ~(1 << D4);
+      008105 72 1B 50 14      [ 1]  735 	bres	_PE_ODR+0, #5
+      008109 CC 80 8B         [ 2]  736 	jp	00131$
+                                    737 ;	main.c: 100: }
+      00810C 84               [ 1]  738 	pop	a
+      00810D 81               [ 4]  739 	ret
+                                    740 	.area CODE
+                                    741 	.area CONST
+                                    742 	.area INITIALIZER
+                                    743 	.area CABS (ABS)
