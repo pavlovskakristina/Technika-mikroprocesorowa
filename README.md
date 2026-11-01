@@ -12,6 +12,13 @@ Repozytorium zawiera rozwiązania zadań laboratoryjnych z przedmiotu **Technika
 | Kompilator | SDCC (Small Device C Compiler) |
 | Programator | ST-Link v2.1 |
 | Flashowanie | stm8flash |
+
+<p align="center">
+  <img src="images/stm8.jpg" alt="Płytka STM8S208R z programatorem ST-Link" width="500">
+  <br>
+  <em>Zestaw laboratoryjny: STM8S208R + ST-Link v2.1</em>
+</p>
+
  
 ---
  
